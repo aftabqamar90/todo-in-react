@@ -4,9 +4,9 @@ import AddToDo from './AddToDo';
 function Todos(props) {
     return (
         <div>
-            <AddToDo></AddToDo>
+            <AddToDo addTodo={props.addTodo}></AddToDo>
             <br />
-            {props.todos.length===0? "No todos to display": <table className="table table-striped table-hover">
+            {props.todos.length === 0 ? "No todos to display" : <table className="table table-striped table-hover">
                 <thead>
                     <tr>
                         <th>
@@ -25,7 +25,7 @@ function Todos(props) {
                 </thead>
                 <tbody>
                     {props.todos.map((todo) => {
-                        return  (
+                        return (
                             <TodoItem todo={todo} key={todo.sno} onDelete={props.onDelete} />
                         )
                     })}
